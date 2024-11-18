@@ -14,6 +14,13 @@ const App = () => {
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+    --color-bg: #faf3f3;
+    --color-red: #97090C;
+    --color-yellow: #DECD13;
+    --color-green: #037143;
+  }
 `;
 
     return (

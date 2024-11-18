@@ -65,6 +65,28 @@ export const ImageSection = styled.section`
     }
 `;
 
+export const CopoContainer = styled.div`
+  
+`;
 
-    
+export const FigureContainer = styled.div`
+  display: flex;
+  position: relative;
+  bottom: 10rem;
 
+  .bebida {
+    display: flex;
+    position: absolute;
+  }
+`;
+
+export const HomeSection = styled.section`
+   height: 100vh;
+`;
+
+
+export const ImageContainer = styled.section`
+  display: flex;
+  position: relative;
+  padding: 0 0 0 27.2rem;
+`;

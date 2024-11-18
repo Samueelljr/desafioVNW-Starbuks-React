@@ -1,15 +1,29 @@
 import React, { useState } from 'react'
-import { HomeTitle, ButtonSection, ImageSection } from './style'
+import { HomeTitle, ButtonSection, ImageSection, CopoContainer, FigureContainer, HomeSection, ImageContainer } from './style'
 import Laranja from "../../assets/images/Laranja.png"
 import Vermelho from "../../assets/images/Vermelho.png"
 import Amarelo from "../../assets/images/Amarelo.png"
+import FundoVerde from '../../../public/FundoVerde.png'
+import FundoVermelho from "../../../public/FundoVermelho.png"
+import FundoAmarelo from '../../../public/FundoAmarelo.png'
 
 
 
 const Home = () => {
 
+  const [copo, setCopo] = useState({
+    src: "CopoLaranja.png",
+    src2: "FundoVerde.png"
+  });
+
+  const handleClick = (src, src2) => {
+    setCopo({ src, src2 })
+  }
+
   return (
-    <>
+
+    <HomeSection>
+
       <HomeTitle>
         <h1>Mais que Café </h1>
 
@@ -24,13 +38,23 @@ const Home = () => {
         </button>
       </ButtonSection>
 
-      <ImageSection>
-        <img src={Laranja} alt="" />
-        <img src={Vermelho} alt="" />
-        <img src={Amarelo} alt="" />
-      </ImageSection>
 
-    </>
+      <ImageContainer>
+        <ImageSection>
+          <img onClick={() => { handleClick("CopoLaranja.png", "FundoVerde.png") }} src={Laranja} alt="" />
+          <img onClick={() => { handleClick("CopoVermelho.png", "FundoVermelho.png") }} src={Vermelho} alt="" />
+          <img onClick={() => { handleClick("CopoAmarelo.png", "FundoAmarelo.png") }} src={Amarelo} alt="" />
+        </ImageSection>
+
+        <CopoContainer>
+          <FigureContainer>
+            <img className='bebida' src={copo.src} alt="" />
+            <img src={copo.src2} alt="" />
+          </FigureContainer>
+        </CopoContainer>
+      </ImageContainer>
+
+    </HomeSection>
   )
 }
 
